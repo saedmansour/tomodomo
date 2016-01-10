@@ -2,3 +2,5 @@
 /log/*
 !/log/.keep
 /tmp
+.env
+.next_git
