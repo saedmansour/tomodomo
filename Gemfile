@@ -9,6 +9,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'active_model_serializers'
+gem 'elasticsearch-model'
 
 # ----------------
 # Frontend
@@ -26,6 +27,7 @@ group :development, :test do
   gem 'capybara'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'elasticsearch-extensions'
 end
 
 group :development do

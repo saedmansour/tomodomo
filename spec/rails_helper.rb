@@ -11,7 +11,8 @@ require 'capybara/rails'
 require 'capybara/rspec'
 require 'database_cleaner'
 require 'devise'
-
+require 'rake'
+require 'elasticsearch/extensions/test/cluster/tasks'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -72,4 +73,12 @@ RSpec.configure do |config|
     Warden.test_mode!
   end
 
+  config.before :each, elasticsearch: true do
+    Elasticsearch::Extensions::Test::Cluster.start(port: 9200) unless Elasticsearch::Extensions::Test::Cluster.running?
+  end
+  
+  config.after :suite do
+    # running? instead of reachable?
+    Elasticsearch::Extensions::Test::Cluster.stop(port: 9200) if Elasticsearch::Extensions::Test::Cluster.reachable?
+  end
 end
