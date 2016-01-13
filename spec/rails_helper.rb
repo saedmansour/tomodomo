@@ -13,6 +13,7 @@ require 'database_cleaner'
 require 'devise'
 require 'rake'
 require 'elasticsearch/extensions/test/cluster/tasks'
+require 'pundit/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -63,9 +64,8 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::TestHelpers, :type => :controller 
 
-  #config.include Features, :type => :feature
   config.include Features::SessionHelpers, type: :feature
 
   config.include Warden::Test::Helpers

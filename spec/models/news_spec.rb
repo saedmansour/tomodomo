@@ -1,16 +1,12 @@
 require 'rails_helper'
 
-# TODO: this elasticsearch test isn't good enough
-# based on: https://blog.pivotal.io/labs/labs/rspec-elasticsearchruby-elasticsearchmodel
+# *: https://blog.pivotal.io/labs/labs/rspec-elasticsearchruby-elasticsearchmodel
 
 describe News, elasticsearch: true do
   before do
     News.__elasticsearch__.create_index! index: "news"
     News.create(title: "hello", content: "content")
     News.import
-
-    # Sleeping here to allow Elasticsearch test cluster
-    # to index the objects we created
     sleep 1
   end
 

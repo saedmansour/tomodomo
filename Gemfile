@@ -6,10 +6,12 @@ gem 'rails', '4.2.5'
 gem 'pg', '~> 0.15'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-gem 'devise'
 gem 'active_model_serializers'
 gem 'elasticsearch-model'
+
+gem 'devise'
+gem 'pundit'
+
 
 # ----------------
 # Frontend

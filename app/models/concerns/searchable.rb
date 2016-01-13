@@ -1,5 +1,3 @@
-require 'elasticsearch/model'
-
 module Searchable
   extend ActiveSupport::Concern
 
