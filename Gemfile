@@ -12,7 +12,6 @@ gem 'elasticsearch-model'
 gem 'devise'
 gem 'pundit'
 
-
 # ----------------
 # Frontend
 # ----------------
@@ -20,6 +19,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
+gem 'draper', :git => 'https://github.com/drapergem/draper.git'
 
 group :development, :test do
   gem 'byebug'
@@ -30,9 +30,10 @@ group :development, :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'elasticsearch-extensions'
+  gem 'rails_admin'
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'spring'
 end
