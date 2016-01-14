@@ -14,6 +14,7 @@ require 'devise'
 require 'rake'
 require 'elasticsearch/extensions/test/cluster/tasks'
 require 'pundit/rspec'
+require 'helpers/elasticsearch_setup'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
